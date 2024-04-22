@@ -51,9 +51,9 @@ public class Carrera {
 
     //Método para agregar estudiantes con validacion
 
-    public boolean estudianteExiste(Estudiante estudiante){
-        for(Estudiante e : estudiantes){
-            if(e.getRut().equals(estudiante.getRut())){
+    public boolean estudianteExiste(Estudiante estudiante) {
+        for (Estudiante e : estudiantes) {
+            if (e.getRut().equals(estudiante.getRut())) {
                 return true;
             }
         }
@@ -61,26 +61,25 @@ public class Carrera {
 
     }
 
-    public boolean agregarEstudiante(Estudiante estudiante){
-        if(!estudianteExiste(estudiante)){
+    public boolean agregarEstudiante(Estudiante estudiante) {
+        if (!estudianteExiste(estudiante)) {
             estudiantes.add(estudiante);
             return true;
         }
         return false;
     }
 
-
     //Método para eliminar estudiantes con validacion
 
-    public boolean eliminarEstudiante(Estudiante estudiante){
-        if(estudianteExiste(estudiante)){
+    public boolean eliminarEstudiante(Estudiante estudiante) {
+        if (estudianteExiste(estudiante)) {
             estudiantes.remove(estudiante);
             return true;
         }
         return false;
     }
 
-    public String toString(){
+    public String toString() {
         return "Nombre Carrera: " + nombreCarrera + " Codigo Carrera: " + codCarrera + " Cantidad de Semestres: " + cantSemestres;
     }
 

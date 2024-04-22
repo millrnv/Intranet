@@ -51,4 +51,5 @@ public class Estudiante {
     public String toString(){
         return "Nombre: " + nombre + " Apellido: " + apellido + " Rut: " + rut + " Numero de Matricula: " + nMatricula;
     }
+
 }
