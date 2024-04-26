@@ -1,7 +1,7 @@
 package ventanas;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class VentanaMenuBienvenida extends Ventana {
 
@@ -19,7 +19,11 @@ public class VentanaMenuBienvenida extends Ventana {
     }
 
     private void generarElementosVentana(){
-
+        generarMensajeMenu();
+        generarBotonRegistrarEstudiante();
+        generarBotonRegistrarCarrera();
+        generarBotonBuscarEstudiante();
+        generarBotonSalir();
 
     }
 
@@ -59,6 +63,39 @@ public class VentanaMenuBienvenida extends Ventana {
         this.botonBuscarEstudiante = super.generarBoton(textoBoton, 175, 140, 150, 40);
         this.add(this.botonBuscarEstudiante);
         this.botonBuscarEstudiante.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == this.botonRegistrarEstudiante){
+            try {
+                VentanaRegistrarEstudiante ventanaRegistroEstudiante = new VentanaRegistrarEstudiante();
+
+            } catch (ClassNotFoundException ex){
+                ex.printStackTrace();
+            }
+            this.dispose();
+
+        }
+
+        if(e.getSource() == this.botonRegistrarCarrera){
+            VentanaRegistrarCarrera ventanaRegistroCarrera = new VentanaRegistrarCarrera();
+            this.dispose();
+        }
+
+        if(e.getSource() == this.botonBuscarEstudiante){
+
+            try {
+                VentanaBuscarEstudiante ventanaBuscarEstudiante = new VentanaBuscarEstudiante();
+            }catch(ClassNotFoundException ex){
+                ex.printStackTrace();
+            }
+            this.dispose();
+        }
+        if(e.getSource() == this.botonSalida){
+            this.dispose();
+            System.exit(0);
+        }
+
     }
 
 

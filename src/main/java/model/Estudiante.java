@@ -2,14 +2,16 @@ package model;
 
 public class Estudiante {
 
-    private String nombre, apellido, rut;
-    private int nMatricula;
+    private String nombre, apellido, rut, nMatricula;
 
-    public Estudiante(String nombre, String apellido, String rut, int nMatricula) {
+    private Carrera carrera;
+
+    public Estudiante(String nombre, String apellido, String rut, String nMatricula, Carrera carrera) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.rut = rut;
         this.nMatricula = nMatricula;
+        this.carrera = carrera;
     }
 
     public Estudiante(){
@@ -40,12 +42,20 @@ public class Estudiante {
         this.rut = rut;
     }
 
-    public int getnMatricula() {
+    public String getnMatricula() {
         return nMatricula;
     }
 
-    public void setnMatricula(int nMatricula) {
+    public void setnMatricula(String nMatricula) {
         this.nMatricula = nMatricula;
+    }
+
+    public Carrera getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
     }
 
     public String toString(){
