@@ -18,7 +18,7 @@ public class VentanaBuscarEstudiante extends Ventana {
     }
     private void generarElementosVentana() throws ClassNotFoundException {
         generarCampoNombre();
-        generarBotonBuscarVehiculo();
+        generarBotonBuscarEstudiante();
         generarBotonCancelar();
         generarListaCarrera();
     }
@@ -33,7 +33,7 @@ public class VentanaBuscarEstudiante extends Ventana {
         this.campoCarrera=super.generarListaDesplegable(CarreraController.getCodigoCarreras(),200,100, 250, 20);
         this.add(this.campoCarrera);
     }
-    private void generarBotonBuscarVehiculo() {
+    private void generarBotonBuscarEstudiante() {
         String textoBoton= "Buscar Estudiante";
         this.botonBuscar = super.generarBoton(textoBoton, 75, 400, 150, 20);
         this.add(this.botonBuscar);
