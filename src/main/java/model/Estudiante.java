@@ -6,9 +6,8 @@ public class Estudiante {
 
     private Carrera carrera;
 
-    public Estudiante(String nombre, String apellido, String rut, String nMatricula, Carrera carrera) {
+    public Estudiante(String nombre, String rut, String nMatricula, Carrera carrera) {
         this.nombre = nombre;
-        this.apellido = apellido;
         this.rut = rut;
         this.nMatricula = nMatricula;
         this.carrera = carrera;

@@ -44,9 +44,8 @@ public class EstudianteDAO {
         for(int fila=0; fila<resultados.size();fila++){
             String rut = (String) resultados.getValue(fila,"rut");
             String nombre = (String) resultados.getValue(fila,"nombre");
-            String apellido = (String) resultados.getValue(fila,"apellido");
             String matricula = (String) resultados.getValue(fila,"matricula");
-            estudiantes.add(new Estudiante(nombre,rut,apellido,matricula,null));
+            estudiantes.add(new Estudiante(nombre,rut,matricula,null));
         }
         return estudiantes;
     }

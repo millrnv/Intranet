@@ -49,6 +49,7 @@ public class VentanaRegistrarEstudiante extends Ventana {
         this.campoNombre= super.generarJTextField(200,50,250,20);
         this.add(this.campoNombre);
     }
+
     private void generarCampoRut(){
         String textoRut= "Rut:";
         super.generarJLabel(this.textoRut,textoRut,20,100,150,20);
@@ -67,11 +68,11 @@ public class VentanaRegistrarEstudiante extends Ventana {
         this.add(this.campoCarrera);
     }
     private boolean registrarEstudiante() throws ClassNotFoundException {
-        if(this.campoMatricula.getText().length()==0 || this.campoNombre.getText().length()==0 || this.campoApellido.getText().length()==0 ||this.campoRut.getText().length()==0 || this.campoCarrera.getSelectedItem().equals("Error no existen carreras")){
+        if(this.campoMatricula.getText().length()==0 || this.campoNombre.getText().length()==0 ||this.campoRut.getText().length()==0 || this.campoCarrera.getSelectedItem().equals("Error no existen carreras")){
             return false;
         }
         else{
-            return EstudianteController.registrarEstudiante(this.campoNombre.getText(),this.campoApellido.getText(),this.campoRut.getText(), this.campoMatricula.getText(),this.campoCarrera.getSelectedItem().toString());
+            return EstudianteController.registrarEstudiante(this.campoNombre.getText(), this.campoRut.getText(), this.campoMatricula.getText(),this.campoCarrera.getSelectedItem().toString());
         }
     }
     public void actionPerformed(ActionEvent e) {

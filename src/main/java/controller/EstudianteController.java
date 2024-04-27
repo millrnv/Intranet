@@ -10,11 +10,11 @@ import org.jooq.DSLContext;
 
 public class EstudianteController {
 
-    public static boolean registrarEstudiante(String nombre,String apellido, String rut, String matricula, String codigoCarrera) throws ClassNotFoundException {
+    public static boolean registrarEstudiante(String nombre, String rut, String matricula, String codigoCarrera) throws ClassNotFoundException {
         DSLContext query = DBGenerator.conectarBD("Universidad");
         if(!EstudianteDAO.validarExistenciaEstudiante(query,"rut",rut)){
             Carrera carrera = CarreraDAO.buscarCarrera(query,codigoCarrera);
-            Estudiante estudiante= new Estudiante(nombre,apellido,rut,matricula,carrera);
+            Estudiante estudiante= new Estudiante(nombre,rut,matricula,carrera);
             EstudianteDAO.agregarEstudiante(query,estudiante);
             DBConnector.closeConnection();
             return true;
@@ -36,7 +36,6 @@ public class EstudianteController {
         DBConnector.closeConnection();
         return datosEstudiantes;
     }
-
 
 
 }
